@@ -37,6 +37,12 @@
   }
 }
 
+%back-to-link {
+  i {
+    margin-right: 0;
+  }
+}
+
 /* STYLES */
 
 body {
@@ -178,13 +184,15 @@ main#posts {
   p.post-music {
     margin-top: variables.$base-separator-margin;
   }
+
+  a.back-to-blog {
+    @extend %back-to-link;
+  }
 }
 
 main#tags {
   a.back-to-tags {
-    i {
-      margin-right: 0;
-    }
+    @extend %back-to-link;
   }
 }
 
