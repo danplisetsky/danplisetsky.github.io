@@ -12,3 +12,5 @@ pom.xml.asc
 /public/
 .idea/
 .nrepl-port
+
+**/.DS_Store
