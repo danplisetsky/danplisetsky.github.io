@@ -10,10 +10,12 @@
    [cryogen-core.compiler :refer [compile-assets-timed]]
    [cryogen-core.config :refer [resolve-config]]
    [cryogen-core.io :refer [path]]
+   [cryogen.update-article.core :refer [update-article-fn]]
    [cryogen.read-data :refer [read-data]]))
 
 (defn init []
-  (letfn [(overrides [] {:data (read-data)})]
+  (letfn [(overrides [] {:data (read-data)
+                         :update-article-fn update-article-fn})]
     (load-plugins)
     (compile-assets-timed overrides)
     (let [ignored-files (-> (resolve-config) :ignored-files)]
