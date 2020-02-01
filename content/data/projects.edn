@@ -1,0 +1,81 @@
+[{:name        "resume-maker"
+  :link        "https://danplisetsky.github.io/resume-maker/"
+  :subtitle    "An interactive resume-making tool"
+  :stack       ["JavaScript" "HTML" "CSS" "Rollup"]
+  :own?        true
+  :date        #inst "2017-12-13"
+  :description "Frustrated with the lack of simple resume-making tools that provide immediate visual response,
+  I wrote this one. I used vanilla JavaScript and functional programming principles."}
+
+ {:name        "date-and-time types"
+  :link        "https://www.npmjs.com/package/@types/date-and-time"
+  :subtitle    "TypeScript type definitions for date-and-time"
+  :stack       ["TypeScript"]
+  :own?        true
+  :date        #inst "2019-03-01"
+  :description "Type definitions for the
+  <a href=\"https://www.npmjs.com/package/date-and-time\" title=\"date-and-time\">date-and-time</a>
+  npm package."}
+
+ {:name        "Express.js Documentation"
+  :link        "https://github.com/danplisetsky/expressjs.com"
+  :subtitle    "Express framework documentation"
+  :own?        false
+  :date        #inst "2018-07-09"
+  :description "Contributed to the documentation"}
+
+ {:name        "flick-radar-prototype"
+  :link        "https://danplisetsky.github.io/flick-radar/"
+  :subtitle    "A prototype movie-tracker app"
+  :stack       ["JavaScript" "Node.js" "Express" "MongoDB" "React.js" "Heroku"]
+  :own?        true
+  :date        #inst "2018-08-10"
+  :description "A prototype of an app that tracks movies released by directors the users choose to follow.
+  <br>
+  <ul>
+    <li>The RESTful API is built with Node.js, Express and MongoDB and deployed on Heroku</li>
+    <li>The library for accessing the API endpoints is built as an npm module</li>
+    <li>The frontend is built as a single page application with React.js</li>
+  </ul>"}
+
+ {:name        "iTunesSearch"
+  :link        "https://github.com/danplisetsky/iTunesSearch"
+  :subtitle    "A wrapper for the iTunes search API"
+  :stack       ["C#"]
+  :own?        false
+  :date        #inst "2017-07-31"
+  :description "Contributed to a C# library that acts as a .NET wrapper for the
+  <a href=\"https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/\">iTunes search API</a>.
+  Added new functionality, wrote new and fixed old unit tests."}
+
+ {:name        "Meme King"
+  :link        "https://github.com/danplisetsky/meme-king"
+  :subtitle    "A meme generator"
+  :stack       ["JavaScript" "React.js"]
+  :own?        false
+  :date        #inst "2018-08-22"
+  :description "Fixed a bug and added a new feature to a React.js-powered web app"}
+
+ {:name        "merge-chapters-md"
+  :link        "https://www.npmjs.com/package/merge-chapters-md"
+  :subtitle    "Merges markdown chapters into a single markdown file"
+  :stack       ["JavaScript" "Node.js" "Jasmine" "Travis CI"]
+  :own?        true
+  :date        #inst "2019-07-19"
+  :description "A zero-configuration command line tool that
+  <ul>
+    <li>Merges separate .md files into a single .md file</li>
+    <li>Watches the files for changes and merges automatically</li>
+    <li>Generates the output file in different formats using <a href=\"https://pandoc.org/\">Pandoc</a></li>
+    <li>And more!</li>
+  </ul>"}
+
+ {:name        "whatsapp-to-html"
+  :link        "https://www.npmjs.com/package/whatsapp-to-html"
+  :subtitle    "Converts exported WhatsApp chats to nicely formatted HTML"
+  :stack       ["TypeScript" "Node.js" "Travis CI" "Rollup"]
+  :own?        true
+  :date        #inst "2019-07-21"
+  :description "An npm library that comes with a command line tool and a user-facing API."}
+
+ ]
