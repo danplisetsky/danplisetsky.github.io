@@ -24,36 +24,36 @@
 
   {{ post.content|safe }}
 
-  {% if post.music %}
-
-  <p class="post-music">
-    <i class="fas fa-headphones"></i>
-    <span class="artist">
-      {{ post.music.artist }}
-    </span>
-    —
-    <span class="song">
-      {{ post.music.song }}
-    </span>
-  </p>
-
-  {% endif %}
-
-  {% if post.book %}
-
-  <p class="post-book">
-    <i class="fas fa-book"></i>
-    <span class="author">
-      {{ post.book.author }}
-    </span>
-    —
-    <span class="title">
-      {{ post.book.title }}
-    </span>
-  </p>
-
-  {% endif %}
-
 </article>
+
+{% if post.music %}
+
+<p class="post-music">
+  <i class="fas fa-headphones"></i>
+  <span class="artist">
+    {{ post.music.artist }}
+  </span>
+  —
+  <span class="song">
+    {{ post.music.song }}
+  </span>
+</p>
+
+{% endif %}
+
+{% if post.book %}
+
+<p class="post-book">
+  <i class="fas fa-book"></i>
+  <span class="author">
+    {{ post.book.author }}
+  </span>
+  —
+  <span class="title">
+    {{ post.book.title }}
+  </span>
+</p>
+
+{% endif %}
 
 {% endblock %}

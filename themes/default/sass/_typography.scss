@@ -125,22 +125,22 @@ main#posts {
     section.post-summary {
       @extend %post-summary;
     }
+  }
 
-    p.post-music {
-      border-top-color: variables.$base-border-color;
-      border-top-style: solid;
-      border-top-width: thin;
-      padding-top: 15px;
+  p.post-music {
+    border-top-color: variables.$base-border-color;
+    border-top-style: solid;
+    border-top-width: thin;
+    padding-top: 15px;
 
-      span.song {
-        @extend %song-or-book-title;
-      }
+    span.song {
+      @extend %song-or-book-title;
     }
+  }
 
-    p.post-book {
-      span.title {
-        @extend %song-or-book-title;
-      }
+  p.post-book {
+    span.title {
+      @extend %song-or-book-title;
     }
   }
 }
