@@ -1,0 +1,36 @@
+// Colors
+
+$black: #000;
+$blue: #5887FF;
+$gray: #2f4f4f;
+$white: #fff;
+$light-gray: #ccc;
+
+$base-text-color: $black;
+$base-link-color: $blue;
+$base-subtitle-color: $gray;
+$inverse-text-color: $white;
+$base-border-color: $light-gray;
+$nav-border-color: $black;
+
+// Fonts
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/css/vendors/fonts/montserrat.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+}
+
+$default-font-family: "Montserrat";
+
+$default-font-size: 16px;
+$default-line-height: 1.5em;
+
+// Margins
+
+$base-subelement-margin: 1em;
+$base-separator-margin: 2em;
+$base-icon-margin: 0.5rem;
+$base-post-title-margin: 0.7rem;

@@ -1,0 +1,38 @@
+{% extends "/html/base.html" %}
+
+{% block subtitle %}: {{ page.title }} {% endblock %}
+
+{% block meta %}
+
+{% include "/html/_includes/page-meta.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div id="publications">
+
+  <h2>{{ page.title }}</h2>
+
+  <h3 id="en">In English</h3>
+
+  <h3 id="ru">In Russian</h3>
+
+  {% with publications = data.publications|sort-by-reversed:date %}
+
+  {% for publication in publications %}
+
+  <li class="{{ publication.lang|name }}">
+    <a href="{{ publication.link }}">
+      <em>{{ publication.name }}</em>
+    </a>
+  </li>
+
+
+  {% endfor %}
+
+  {% endwith %}
+
+</div>
+
+{% endblock %}

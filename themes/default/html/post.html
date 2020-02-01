@@ -1,0 +1,59 @@
+{% extends "/html/base.html" %}
+
+{% block subtitle %}: {{ post.title }} {% endblock %}
+
+{% block meta %}
+
+<meta name="keywords" content="{% for tag in post.tags %}{{tag.name}}{% if not forloop.last %},{% endif %}{% endfor %}">
+
+{% if post.description %}
+<meta name="description" content="{{ post.description }}">
+<meta property="og:description" content="{{ post.description }}">
+{% endif %}
+
+<meta property="og:title" content="{{ title }} | {{ post.title }}">
+<meta property="og:type" content="blog">
+
+{% endblock %}
+
+{% block content %}
+
+<article>
+
+  {% include "/html/_includes/post-summary.html" %}
+
+  {{ post.content|safe }}
+
+  {% if post.music %}
+
+  <p class="post-music">
+    <i class="fas fa-headphones"></i>
+    <span class="artist">
+      {{ post.music.artist }}
+    </span>
+    —
+    <span class="song">
+      {{ post.music.song }}
+    </span>
+  </p>
+
+  {% endif %}
+
+  {% if post.book %}
+
+  <p class="post-book">
+    <i class="fas fa-book"></i>
+    <span class="author">
+      {{ post.book.author }}
+    </span>
+    —
+    <span class="title">
+      {{ post.book.title }}
+    </span>
+  </p>
+
+  {% endif %}
+
+</article>
+
+{% endblock %}

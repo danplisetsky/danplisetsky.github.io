@@ -1,0 +1,205 @@
+@use "variables";
+
+/*
+ LAYOUT VALUES:
+   display
+   flex*
+   *width
+   *height (except line-height)
+   margin*
+   order
+   align*
+   justify*
+ */
+
+/* PLACEHOLDERS */
+
+%post-summary {
+  margin-bottom: variables.$base-separator-margin;
+
+  h2.post-name,
+  h3.post-name {
+    margin-bottom: variables.$base-post-title-margin;
+  }
+
+  div.post-additional-info {
+    margin-left: variables.$base-subelement-margin;
+
+    p.post-tag-list {
+      margin-top: variables.$base-post-title-margin;
+
+      a.tags-link {
+        i {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+/* STYLES */
+
+body {
+  display: flex;
+  flex-direction: column;
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+
+  a:not(:last-child) {
+    margin-right: 0.5em;
+  }
+
+  a.with-icon {
+    margin-right: 0;
+  }
+}
+
+i.fas {
+  margin-right: variables.$base-icon-margin;
+}
+
+main#pages {
+  div#projects,
+  div#publications {
+    h3:first-of-type {
+      margin-top: 0;
+    }
+  }
+}
+
+main {
+  h2 {
+    margin-bottom: 1em;
+  }
+
+  div#projects {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      order: 0;
+    }
+
+    h3#own-projects {
+      order: 10;
+    }
+
+    section.own-true {
+      order: 100;
+    }
+
+    h3#contributions {
+      order: 500;
+    }
+
+    section.own-false {
+      order: 1000;
+    }
+
+    section {
+      margin-bottom: variables.$base-separator-margin;
+
+      p.project-subtitle {
+        margin-bottom: 0;
+      }
+
+      div.project-stack {
+        display: flex;
+
+        margin-top: 15px;
+
+        i {
+          align-self: center;
+          font-size: 0.8em;
+        }
+
+        p.project-stack {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
+
+      div.project-description {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  div#publications {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      order: 0;
+    }
+
+    h3#en {
+      order: 10;
+    }
+
+    li.en {
+      order: 100;
+    }
+
+    h3#ru {
+      order: 500;
+    }
+
+    li.ru {
+      order: 1000;
+    }
+
+    li {
+      margin-left: variables.$base-subelement-margin;
+    }
+  }
+}
+
+main#archives {
+  div#posts {
+    section.post-summary {
+      @extend %post-summary;
+    }
+  }
+}
+
+main#posts {
+  article {
+    section.post-summary {
+      @extend %post-summary;
+    }
+
+    p.post-music {
+      margin-top: variables.$base-separator-margin;
+    }
+  }
+}
+
+main#tags {
+ a.back-to-tags {
+
+    i {
+      margin-right: 0;
+    }
+  }
+}
+
+main[id='404'] {
+  p {
+    a {
+      i {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+footer {
+  align-self: center;
+  margin-top: 1em;
+}

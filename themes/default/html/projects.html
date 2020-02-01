@@ -1,0 +1,55 @@
+{% extends "/html/base.html" %}
+
+{% block subtitle %}: {{ page.title }} {% endblock %}
+
+{% block meta %}
+
+{% include "/html/_includes/page-meta.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div id="projects">
+
+  <h2>{{ page.title }}</h2>
+
+  <h3 id="own-projects">Own projects</h3>
+
+  <h3 id="contributions">Contributions</h3>
+
+  {% with projects = data.projects|sort-by-reversed:date %}
+
+  {% for project in projects %}
+
+  <section class="project-summary own-{{ project.own? }}">
+
+    <a href="{{ project.link }}" class="project-name">
+      {{ project.name }}
+    </a>
+
+    <p class="project-subtitle"> {{ project.subtitle }} </p>
+
+    {% if project.stack %}
+
+    <div class="project-stack">
+      <i class="fas fa-hammer"></i>
+      <p class="project-stack"> {{ project.stack|join:", " }} </p>
+    </div>
+
+    {% endif %}
+
+    <div class="project-description">
+      {{ project.description|safe }}
+    </div>
+
+  </section>
+
+
+  {% endfor %}
+
+  {% endwith %}
+
+</div>
+
+{% endblock %}

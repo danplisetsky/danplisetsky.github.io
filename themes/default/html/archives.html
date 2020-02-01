@@ -1,0 +1,24 @@
+{% extends "/html/base.html" %}
+
+{% block subtitle %}: Blog {% endblock %}
+
+{% block meta %}
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ title }} | Blog">
+
+{% endblock %}
+
+{% block content %}
+
+<div id="posts">
+  <h2>Blog Posts</h2>
+
+  {% for post in posts %}
+
+  {% include "/html/_includes/post-summary.html" %}
+
+  {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,167 @@
+@use "variables";
+
+/*
+ TYPOGRAPHY VALUES:
+   font*
+   line-height
+   text*
+   *color
+   cursor
+   border*
+   padding*
+   transition
+ */
+
+/* PLACEHOLDERS */
+
+%post-summary {
+  div.post-additional-info {
+    .post-published-date {
+      color: variables.$base-subtitle-color;
+    }
+
+    .post-tag-list {
+      font-style: italic;
+
+      a.tags-link {
+        color: variables.$base-text-color;
+
+        &:hover {
+          border-bottom: none;
+        }
+      }
+
+      a.post-tag:not(:last-child)::after {
+        content: ",";
+        color: variables.$base-subtitle-color;
+      }
+    }
+  }
+}
+
+%song-or-book-title {
+  font-style: italic;
+  font-size: 0.95em;
+  color: variables.$base-subtitle-color;
+}
+
+/* STYLES */
+
+body {
+  font-family: variables.$default-font-family, serif;
+  font-size: variables.$default-font-size;
+  line-height: variables.$default-line-height;
+
+  text-rendering: optimizeLegibility;
+
+  padding: 2%;
+}
+
+a {
+  text-decoration: none;
+  color: variables.$base-link-color;
+  cursor: pointer;
+
+  &:visited {
+    color: variables.$base-link-color;
+  }
+}
+
+nav {
+  border-bottom-color: variables.$nav-border-color;
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+  padding-bottom: 5px;
+
+  a {
+    color: variables.$base-text-color;
+
+    &:visited {
+      color: variables.$base-text-color;
+    }
+
+    &:hover {
+      transition: all 0.5s;
+      background-color: variables.$base-text-color;
+      color: variables.$inverse-text-color;
+    }
+  }
+}
+
+main {
+  a:hover {
+    border-bottom: 2px solid black;
+  }
+}
+
+main#pages {
+  div#projects {
+    section {
+      a.project-name {
+        font-size: 1.5em;
+      }
+
+      p.project-subtitle {
+        color: variables.$base-subtitle-color;
+      }
+
+      p.project-stack {
+        font-style: italic;
+      }
+    }
+  }
+}
+
+main#archives {
+  div#posts {
+    section.post-summary {
+      @extend %post-summary;
+    }
+  }
+}
+
+main#posts {
+  article {
+    section.post-summary {
+      @extend %post-summary;
+    }
+
+    p.post-music {
+      border-top-color: variables.$base-border-color;
+      border-top-style: solid;
+      border-top-width: thin;
+      padding-top: 15px;
+
+      span.song {
+        @extend %song-or-book-title;
+      }
+    }
+
+    p.post-book {
+      span.title {
+        @extend %song-or-book-title;
+      }
+    }
+  }
+}
+
+main#secret {
+  blockquote {
+    border-left-color: variables.$base-border-color;
+    border-left-style: solid;
+    border-left-width: 3px;
+    padding-left: 15px;
+
+    font-style: italic;
+  }
+}
+
+main#tags {
+  h2 {
+    span#tag {
+      color: variables.$base-subtitle-color;
+      font-size: 0.95em;
+      font-style: italic;
+    }
+  }
+}

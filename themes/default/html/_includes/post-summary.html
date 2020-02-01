@@ -1,0 +1,34 @@
+<section class="post-summary">
+
+  {% ifequal active-page "archives" %}
+
+  <h3 class="post-name">
+    <a href="{{ post.uri }}">
+      {{ post.title }}
+    </a>
+  </h3>
+
+  {% else %}
+
+  <h2 class="post-name">{{ post.title }}</h2>
+
+  {% endifequal %}
+
+  <div class="post-additional-info">
+    <i class="fas fa-pen-fancy"></i>
+    <time class="post-published-date" datetime="{{ post.date }}">
+      {{post.date|date:longDate}}
+    </time>
+    <p class="post-tag-list">
+      <a class="tags-link" href="{{ tags-uri }}">
+        <i class="fas fa-tags"></i>
+      </a>
+
+      {% for tag in post.tags %}
+
+      <a href="{{ tag.uri }}" class="post-tag">{{ tag.name }}</a>
+
+      {% endfor %}
+    </p>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+{% extends "/html/base.html" %}
+
+{% block subtitle %}: Tag {{ name }} {% endblock %}
+
+{% block content %}
+
+<h2>Posts Tagged
+  <span id="tag">"{{ name }}"</span>
+</h2>
+
+<ul>
+
+  {% for post in posts %}
+
+  <li>
+    <a href="{{ post.uri }}">
+      {{ post.title }}
+    </a>
+  </li>
+
+  {% endfor %}
+
+</ul>
+
+<a class="back-to-tags" href="{{ tags-uri }}">
+  <i class="fas fa-long-arrow-alt-left"></i>
+  Back to Tags
+</a>
+
+{% endblock %}

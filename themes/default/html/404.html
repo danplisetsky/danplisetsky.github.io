@@ -1,0 +1,23 @@
+{% extends "/html/base.html" %}
+
+{% block subtitle %}: 404 {% endblock %}
+
+{% block content %}
+
+<h2>Oh No, There's Nothing Here!</h2>
+
+<p>
+  What to do now but go
+  <a href="{{ index-uri }}">
+    <i class="fas fa-home"></i>
+    home...
+  </a>
+<!--   Сколько времени прошло с тех пор, как вы были здесь в последний раз!
+  И что делать дальше?
+  Идти
+  <a href="{{index-uri}}">
+    домой...
+  </a> -->
+</p>
+
+{% endblock %}
