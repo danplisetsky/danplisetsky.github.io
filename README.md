@@ -2,11 +2,11 @@
 
 Built with [Cryogen][].
 
-## Deploy
+## Build
 
 - `cd themes/default`
 - `npm i`
-- `npm run bundle`
+- `npm run build`
 - `lein run`
 
 

@@ -8,7 +8,9 @@
     "copy:normalize.css": "cp node_modules/normalize.css/normalize.css css/vendors/normalize.css",
     "copy:font-awesome-webfonts": "cp node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2 css/vendors/webfonts/fa-solid-900.woff2",
     "copy:font-awesome-css": "cp node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css node_modules/@fortawesome/fontawesome-free/css/solid.min.css css/vendors/font-awesome/",
-    "bundle": "npm-run-all --parallel copy:*"
+    "css:copy": "npm-run-all --parallel copy:*",
+    "js:bundle": "",
+    "build": "npm-run-all --parallel css:*"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.12.0",
