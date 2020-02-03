@@ -2,14 +2,14 @@
 
 /*
  TYPOGRAPHY VALUES:
-   font*
-   line-height
-   text*
-   *color
-   cursor
-   border*
-   padding*
-   transition
+  border*
+  *color
+  cursor
+  font*
+  line-height
+  padding*
+  text*
+  transition
  */
 
 /* PLACEHOLDERS */
@@ -124,6 +124,23 @@ main#posts {
   article {
     section.post-summary {
       @extend %post-summary;
+    }
+
+    > h3,
+    h4,
+    h5,
+    h6 {
+      > a {
+        i {
+          font-size: 0.8em;
+        }
+
+        &:hover {
+          @media not all and (pointer: fine) {
+            border-bottom: none;
+          }
+        }
+      }
     }
   }
 

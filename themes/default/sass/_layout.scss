@@ -2,17 +2,24 @@
 
 /*
  LAYOUT VALUES:
-   display
-   flex*
-   *width
-   *height (except line-height)
-   margin*
-   order
-   align*
-   justify*
+  align*
+  display
+  flex*
+  *height (except line-height)
+  justify*
+  margin*
+  order
+  visibility
+  *width
  */
 
 /* PLACEHOLDERS */
+
+%link-with-icon {
+  i {
+    margin-right: 0;
+  }
+}
 
 %post-summary {
   margin-bottom: variables.$base-separator-margin;
@@ -29,17 +36,9 @@
       margin-top: variables.$base-post-title-margin;
 
       a.tags-link {
-        i {
-          margin-right: 0;
-        }
+        @extend %link-with-icon;
       }
     }
-  }
-}
-
-%back-to-link {
-  i {
-    margin-right: 0;
   }
 }
 
@@ -179,6 +178,36 @@ main#posts {
     section.post-summary {
       @extend %post-summary;
     }
+
+    > h3,
+    h4,
+    h5,
+    h6 {
+      > a {
+        @media (pointer: fine) {
+          visibility: hidden;
+          opacity: 0;
+        }
+
+        @extend %link-with-icon;
+        margin-left: variables.$base-icon-margin;
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0s, opacity 0.3s linear;
+
+        i {
+          position: relative;
+          top: -0.1em;
+        }
+      }
+
+      &:hover {
+        > a {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
   }
 
   p.post-music {
@@ -186,13 +215,13 @@ main#posts {
   }
 
   a.back-to-blog {
-    @extend %back-to-link;
+    @extend %link-with-icon;
   }
 }
 
 main#tags {
   a.back-to-tags {
-    @extend %back-to-link;
+    @extend %link-with-icon;
   }
 }
 
