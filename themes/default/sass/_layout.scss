@@ -61,6 +61,10 @@ nav {
 
   a.with-icon {
     margin-right: 0;
+
+    > i {
+      margin-right: 1px;
+    }
   }
 }
 
