@@ -142,6 +142,12 @@ main#posts {
         }
       }
     }
+
+    p {
+      strong {
+        color: variables.$strong-color;
+      }
+    }
   }
 
   p.post-music {
