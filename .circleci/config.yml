@@ -21,12 +21,27 @@ jobs:
             - ~/usr/local/lib/node_modules
           key: node-v1-{{ .Branch }}-{{ checksum "~/project/themes/default/package-lock.json" }}
 
+  prepare-lein:
+    docker:
+      - image: circleci/clojure:lein-2.9.1
+    steps:
+      - restore_cache:
+          key: deps-{{ checksum "project.clj }}
+      - run: lein deps
+      -  save_cache:
+           paths:
+             - ~/.m2
+           key: deps-{{ checksum "project.clj }}
 
-#        - cd ~/project/themes/default
-#        - npm i
-#        - npm run build
 
 workflows:
   prepare:
     jobs:
-      - prepare-node
+      - prepare-node:
+          filters:
+            branches:
+              only: develop
+      - prepare-lain:
+          filters:
+            branches:
+              only: develop
