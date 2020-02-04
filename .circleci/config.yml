@@ -39,6 +39,19 @@ jobs:
              - ~/.m2
            key: deps-{{ checksum "project.clj" }}
 
+  build:
+    docker:
+      - image: circleci/clojure:lein-2.9.1
+    steps:
+      - attach_workspace:
+          - at: ~/project
+      - restore_cache:
+          key: deps-{{ checksum "project.clj" }}
+      - run: lein run
+      - persist_to_workspace:
+          root: ~/project/public
+          paths:
+            - .
 
 workflows:
   prepare:
@@ -50,6 +63,12 @@ workflows:
       - prepare-lein:
           requires:
             - prepare-node
+          filters:
+            branches:
+              only: develop
+      - build:
+          requires:
+            - prepare-lein
           filters:
             branches:
               only: develop
