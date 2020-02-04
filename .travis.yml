@@ -1,1 +1,27 @@
-language: clojure
+if: branch = develop
+
+language: node_js
+node_js: 12
+install:
+  - cd "themes/default"
+  - npm i
+  - npm run build
+script: skip
+
+#language: clojure
+#script:
+#    - lein run
+#
+#jobs:
+#  include:
+#    - stage:
+#        - name: prepare-node
+#          language: node_js
+#          node_js: 12
+#      install:
+#        - cd "themes/default"
+#        - npm i
+#        - npm run build
+#      script: skip
+#
+
