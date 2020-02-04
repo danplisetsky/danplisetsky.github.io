@@ -9,3 +9,4 @@ jobs:
       - run: cd "themes/default"
       - run: npm i
       - run: npm run build
+
