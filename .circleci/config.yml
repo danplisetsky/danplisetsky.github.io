@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  prepare:
+  prepare-node:
     docker:
       - image: circleci/node:12.2.0
     steps:
@@ -10,3 +10,7 @@ jobs:
       - run: npm i
       - run: npm run build
 
+workflows:
+  prepare:
+    jobs:
+      - prepare-node
