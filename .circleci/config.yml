@@ -6,11 +6,21 @@ jobs:
       - image: circleci/node:12.2.0
     steps:
       - checkout
+      - restore_cache:
+          krys:
+            - node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - node-v1-{{ .Branch }}-
+            - node-v1-
       - run:
           working_directory: ~/project/themes/default
           command: |
             npm i
             npm build
+      - save_cache:
+          paths:
+            - ~/usr/local/lib/node_modules
+          key: node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
+
 
 #        - cd ~/project/themes/default
 #        - npm i
