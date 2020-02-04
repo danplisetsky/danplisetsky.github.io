@@ -44,7 +44,7 @@ jobs:
       - image: circleci/clojure:lein-2.9.1
     steps:
       - attach_workspace:
-          - at: ~/project
+          at: ~/project
       - restore_cache:
           key: deps-{{ checksum "project.clj" }}
       - run: lein run
