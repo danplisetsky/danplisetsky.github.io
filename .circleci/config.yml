@@ -41,7 +41,7 @@ workflows:
           filters:
             branches:
               only: develop
-      - prepare-lain:
+      - prepare-lein:
           filters:
             branches:
               only: develop
