@@ -7,9 +7,14 @@ jobs:
     steps:
       - checkout
       - run:
-        - cd ~/project/themes/default
-        - npm i
-        - npm run build
+          working_directory: ~/project/themes/default
+          command: |
+            npm i
+            npm build
+
+#        - cd ~/project/themes/default
+#        - npm i
+#        - npm run build
 
 workflows:
   prepare:
