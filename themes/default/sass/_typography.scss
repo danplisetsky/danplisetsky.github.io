@@ -45,6 +45,12 @@
   color: variables.$base-subtitle-color;
 }
 
+%no-border-bottom-for-mobile {
+  @media not all and (pointer: fine) {
+    border-bottom: none;
+  }
+}
+
 /* STYLES */
 
 body {
@@ -136,9 +142,7 @@ main#posts {
         }
 
         &:hover {
-          @media not all and (pointer: fine) {
-            border-bottom: none;
-          }
+          @extend %no-border-bottom-for-mobile;
         }
       }
     }
@@ -146,6 +150,16 @@ main#posts {
     p {
       strong {
         color: variables.$strong-color;
+      }
+    }
+
+    div#footnotes {
+      ol {
+        > li {
+          a:hover {
+            @extend %no-border-bottom-for-mobile;
+          }
+        }
       }
     }
   }

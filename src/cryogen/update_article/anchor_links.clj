@@ -1,15 +1,10 @@
-(ns cryogen.update-article.anchor-links)
+(ns cryogen.update-article.anchor-links
+  (:require [cryogen.update-article.util :refer [create-anchor-link]]))
 
 (defn ^:private create-link-icon
   []
-  {:tag :i,
+  {:tag   :i,
    :attrs {:class "fas fa-link"}})
-
-(defn ^:private create-anchor-link
-  [href]
-  {:tag :a,
-   :attrs {:href href}
-   :content (list (create-link-icon))})
 
 (defn ^:private header-tag->header-tag-with-link
   "Takes a map representing an html tag.
@@ -22,7 +17,9 @@
     (let [id (get-in tag [:attrs :id])
           content (:content tag)
           new-content (concat content
-                              (list (create-anchor-link (str "#" id))))]
+                              (list
+                                (create-anchor-link (str "#" id)
+                                                    (list (create-link-icon)))))]
       (assoc tag :content new-content))
     tag))
 

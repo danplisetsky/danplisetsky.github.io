@@ -24,6 +24,29 @@
 
   {{ post.content|safe }}
 
+  {% if post.footnotes %}
+
+  <hr>
+
+  <div id="footnotes">
+    <ol>
+
+      {% for footnote in post.footnotes|sort %}
+
+      <li id="footnote{{ footnote|first }}">
+        {{ footnote|last }}
+        <a href="#footnoteref:1">
+          <i class="fas fa-undo-alt"></i>
+        </a>
+      </li>
+
+      {% endfor %}
+
+    </ol>
+  </div>
+
+  {% endif %}
+
 </article>
 
 {% if post.music %}

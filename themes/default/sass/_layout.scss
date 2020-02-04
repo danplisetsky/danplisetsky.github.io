@@ -213,6 +213,16 @@ main#posts {
         }
       }
     }
+
+    div#footnotes {
+      ol {
+        > li {
+          a {
+            @extend %link-with-icon;
+          }
+        }
+      }
+    }
   }
 
   p.post-music {
@@ -233,9 +243,7 @@ main#tags {
 main[id="404"] {
   p {
     a {
-      i {
-        margin-right: 0;
-      }
+      @extend %link-with-icon;
     }
   }
 }
