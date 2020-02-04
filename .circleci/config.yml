@@ -8,7 +8,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - node-v1-{{ .Branch }}-{{ checksum "~/project/themes/default/package-lock.json" }}
             - node-v1-{{ .Branch }}-
             - node-v1-
       - run:
@@ -19,7 +19,7 @@ jobs:
       - save_cache:
           paths:
             - ~/usr/local/lib/node_modules
-          key: node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: node-v1-{{ .Branch }}-{{ checksum "~/project/themes/default/package-lock.json" }}
 
 
 #        - cd ~/project/themes/default
