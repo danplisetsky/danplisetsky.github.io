@@ -6,9 +6,10 @@ jobs:
       - image: circleci/node:12.2.0
     steps:
       - checkout
-      - run: cd ~/project/themes/default
-      - run: npm i
-      - run: npm run build
+      - run:
+        - cd ~/project/themes/default
+        - npm i
+        - npm run build
 
 workflows:
   prepare:
