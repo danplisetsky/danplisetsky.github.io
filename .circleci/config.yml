@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          krys:
+          keys:
             - node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
             - node-v1-{{ .Branch }}-
             - node-v1-
