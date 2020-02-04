@@ -4,9 +4,9 @@ jobs:
   prepare-node:
     docker:
       - image: circleci/node:12.2.0
+    working_directory: ~/project/themes/default
     steps:
       - checkout
-      - run: cd "themes/default"
       - run: npm i
       - run: npm run build
 
