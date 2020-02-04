@@ -1,0 +1,11 @@
+version: 2.1
+
+jobs:
+  prepare:
+    docker:
+      - image: circleci/node:12.2.0
+    steps:
+      - checkout
+      - run: cd "themes/default"
+      - run: npm i
+      - run: npm run build
