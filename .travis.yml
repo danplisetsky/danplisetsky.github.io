@@ -2,13 +2,29 @@ if: branch = develop
 
 language: node_js
 node_js: 12
-install:
-  - cd "themes/default"
-  - npm i
-  - npm run build
-script: skip
 
-#language: clojure
+jobs:
+  include:
+    - stage: prepare
+      install:
+        - cd "themes/default"
+        - npm i
+        - npm run build
+      script: skip
+    - language: clojure
+      stage: build
+      script: lein run
+    - language: clojure
+      stage: deploy
+
+stages:
+  - prepare
+  - build
+
+
+
+
+    #    - #language: clojure
 #script:
 #    - lein run
 #
