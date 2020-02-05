@@ -47,6 +47,13 @@ jobs:
           at: ~/project
       - restore_cache:
           key: deps-{{ checksum "project.clj" }}
+      - run:
+          working_directory: ~
+          command: |
+            curl -L --output ~/sass.tar.gz https://github.com/sass/dart-sass/releases/download/1.25.0/dart-sass-1.25.0-linux-x64.tar.gz
+            tar -xzvf ~/sass.tar.gz
+            echo 'export PATH=~/dart-sass:$PATH' >> $BASH_ENV
+            source ~/.bashrc
       - run: lein run
       - persist_to_workspace:
           root: ~/project/public
