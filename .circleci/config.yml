@@ -82,11 +82,14 @@ jobs:
 #              git config credential.helper
       - run: |
           git checkout -B master origin/master
+          git clean -fd
           git rm -rf .
           mv ~/gh-pages/* ~/project
           git add .
           git commit --allow-empty -m "CircleCI commit"
-          git push --quiet origin master
+          git show --stat
+          ls
+#          git push --quiet https://${GITHUB_TOKEN}@github.com/danplisetsky/danplisetsky.github.io.git master
 
 workflows:
   prepare:
