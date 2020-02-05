@@ -53,12 +53,13 @@ jobs:
             curl -L --output ~/sass.tar.gz https://github.com/sass/dart-sass/releases/download/1.25.0/dart-sass-1.25.0-linux-x64.tar.gz
             mkdir -p ~/sass
             tar -xzvf ~/sass.tar.gz -C ~/sass
-            echo 'export PATH=~/sass/dart-sass:$PATH' >> ~/.bashrc
+            echo 'export PATH=$PATH:/home/circleci/sass/dart-sass' >> ~/.bashrc
             cat ~/.bashrc
             source ~/.bashrc
             echo $PATH
       - run: |
           cat ~/.bashrc
+          export PATH=$PATH:/home/circleci/sass/dart-sass
           echo $PATH
           lein run
       - persist_to_workspace: # prob replace with store-artifacts
