@@ -75,10 +75,10 @@ jobs:
       - attach_workspace:
           at: ~/
       - run:
-          - name: Configure git
-          - command: |
-              git config user.email "danplisetsky@gmail.com"
-              git config user.name  "CircleCI"
+          name: Configure git
+          command: |
+            git config user.email "danplisetsky@gmail.com"
+            git config user.name  "CircleCI"
 #              git config credential.helper
       - run: |
           git br -vv
