@@ -55,7 +55,9 @@ jobs:
             tar -xzvf ~/sass.tar.gz -C ~/sass
             echo 'export PATH=~/sass/dart-sass:$PATH' >> ~/.bashrc
             source ~/.bashrc
+            echo $PATH
       - run: |
+          echo $PATH
           lein run
       - persist_to_workspace: # prob replace with store-artifacts
           root: ~/project/public
