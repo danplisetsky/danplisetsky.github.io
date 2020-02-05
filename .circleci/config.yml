@@ -57,14 +57,14 @@ jobs:
           export PATH=$PATH:/home/circleci/sass/dart-sass
           lein run
       - run:
+          name: Compress Artifacts
+          command: tar -cvf ~/compiled-html.tar ~/project/public/
+      - run:
           name: Move compiled output
           working_directory: ~
           command: |
             mkdir -p ~/gh-pages
             mv ~/project/public/* ~/gh-pages/
-      - run:
-          name: Compress Artifacts
-          command: tar -cvf ~/compiled-html.tar ~/project/public
       - store_artifacts:
           path: ~/compiled-html.tar
           destination: compiled-html
@@ -93,8 +93,10 @@ jobs:
           mv ~/gh-pages/* ~/project
           git add .
           git commit --allow-empty -m "CircleCI commit"
-          git show -p
+          git show --stat
           ls
+          ls css/
+          git show -p | cat
 #          git push --quiet https://${GITHUB_TOKEN}@github.com/danplisetsky/danplisetsky.github.io.git master
 
 workflows:
