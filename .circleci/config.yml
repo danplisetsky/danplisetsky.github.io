@@ -81,7 +81,7 @@ jobs:
             git config user.name  "CircleCI"
 #              git config credential.helper
       - run: |
-          git br -vv
+          git branch -vv
           git checkout master
           ls -l
 #          git rm -rf .
