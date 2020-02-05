@@ -54,10 +54,7 @@ jobs:
             mkdir -p ~/sass
             tar -xzvf ~/sass.tar.gz -C ~/sass
       - run: |
-          echo 'export PATH=$PATH:/home/circleci/sass/dart-sass' >> ~/.sass-path
-          source ~/.sass-path
-          # export PATH=$PATH:/home/circleci/sass/dart-sass
-          echo $PATH
+          export PATH=$PATH:/home/circleci/sass/dart-sass
           lein run
       - persist_to_workspace: # prob replace with store-artifacts
           root: ~/project/public
