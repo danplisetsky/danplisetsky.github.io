@@ -54,9 +54,8 @@ jobs:
             mkdir -p ~/sass
             tar -xzvf ~/sass.tar.gz -C ~/sass
       - run: |
-          echo 'export PATH=$PATH:/home/circleci/sass/dart-sass' >> ~/.bashrc
-          cat ~/.bashrc | tail -5
-          source ~/.bashrc
+          echo 'export PATH=$PATH:/home/circleci/sass/dart-sass' >> ~/.sass-path
+          source ~/.sass-path
           # export PATH=$PATH:/home/circleci/sass/dart-sass
           echo $PATH
           lein run
