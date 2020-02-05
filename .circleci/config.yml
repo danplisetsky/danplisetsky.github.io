@@ -15,7 +15,7 @@ jobs:
           working_directory: ~/project/themes/default
           command: |
             npm i
-            npm build
+            npm run build
       - save_cache:
           paths:
             - ~/usr/local/lib/node_modules
@@ -93,11 +93,7 @@ jobs:
           mv ~/gh-pages/* ~/project
           git add .
           git commit --allow-empty -m "CircleCI commit"
-          git show --stat
-          ls
-          ls css/
-          git show -p | cat
-#          git push --quiet https://${GITHUB_TOKEN}@github.com/danplisetsky/danplisetsky.github.io.git master
+          git push --quiet https://${GITHUB_TOKEN}@github.com/danplisetsky/danplisetsky.github.io.git master
 
 workflows:
   prepare:
