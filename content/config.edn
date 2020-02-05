@@ -19,7 +19,7 @@
  :sass-path                    "sass"
  :theme                        "default"
  :resources                    ["img", "pdf"]
- :keep-files                   [".git"]
+ :keep-files                   [".gitkeep"]
  :disqus?                      false
  :disqus-shortname             ""
  :ignored-files                [#"\.#.*" #".*\.swp$"]       ; Used by read-posts
