@@ -56,8 +56,8 @@ jobs:
             source ~/.bashrc
             which sass
       - run: |
-        which sass
-        lein run
+          nwhich sass
+          lein run
       - persist_to_workspace:
           root: ~/project/public
           paths:
