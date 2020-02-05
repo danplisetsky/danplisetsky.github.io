@@ -74,17 +74,21 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/
-#      - run:
-#          - name: Configure git
-#          - command: |
+      - run:
+          - name: Configure git
+          - command: |
+              git config user.email "danplisetsky@gmail.com"
+              git config user.name  "CircleCI"
 #              git config credential.helper
       - run: |
+          git br -vv
           git checkout master
-          git rm -rf .
-          mv ~/gh-pages/* ~/project
-          git add .
-          git commit --allow-empty -m "CircleCI commit"
-          git push --quiet origin master
+          ls -l
+#          git rm -rf .
+#          mv ~/gh-pages/* ~/project
+#          git add .
+#          git commit --allow-empty -m "CircleCI commit"
+#          git push --quiet origin master
 
 workflows:
   prepare:
