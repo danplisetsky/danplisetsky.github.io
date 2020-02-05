@@ -57,7 +57,10 @@ jobs:
             cat ~/.bash_profile
             source ~/.bash_profile
             echo $PATH
+            echo 'echo hello_world' >> ~/.bashrc
+            echo 'touch ~/a.txt' >> ~/.bashrc
       - run: |
+          ls ~
           cat ~/.bash_profile
           # export PATH=$PATH:/home/circleci/sass/dart-sass
           echo $PATH
