@@ -54,9 +54,11 @@ jobs:
             mkdir -p ~/sass
             tar -xzvf ~/sass.tar.gz -C ~/sass
             echo 'export PATH=~/sass/dart-sass:$PATH' >> ~/.bashrc
+            cat ~/.bashrc
             source ~/.bashrc
             echo $PATH
       - run: |
+          cat ~/.bashrc
           echo $PATH
           lein run
       - persist_to_workspace: # prob replace with store-artifacts
