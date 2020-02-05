@@ -56,10 +56,35 @@ jobs:
       - run: |
           export PATH=$PATH:/home/circleci/sass/dart-sass
           lein run
-      - persist_to_workspace: # prob replace with store-artifacts
-          root: ~/project/public
+      - run:
+          name: Move compiled output
+          working_directory: ~
+          command: |
+            mkdir -p ~/gh-pages
+            mv ~/project/public/* ~/gh-pages/
+      - persist_to_workspace:
+          root: ~/
           paths:
-            - .
+            - project
+            - gh-pages
+
+  publish:
+    docker:
+      - image: circleci/python:rc
+    steps:
+      - attach_workspace:
+          at: ~/
+#      - run:
+#          - name: Configure git
+#          - command: |
+#              git config credential.helper
+      - run: |
+          git checkout master
+          git rm -rf .
+          mv ~/gh-pages/* ~/project
+          git add .
+          git commit --allow-empty -m "CircleCI commit"
+          git push --quiet origin master
 
 workflows:
   prepare:
@@ -77,6 +102,12 @@ workflows:
       - build:
           requires:
             - prepare-lein
+          filters:
+            branches:
+              only: develop
+      - publish:
+          requires:
+            - build
           filters:
             branches:
               only: develop
