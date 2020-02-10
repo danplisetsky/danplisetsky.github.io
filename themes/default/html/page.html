@@ -1,6 +1,14 @@
 {% extends "/html/base.html" %}
 
-{% block subtitle %}: {{ page.title }} {% endblock %}
+{% block subtitle %}
+
+{% if not home %}
+
+: {{ page.title }}
+
+{% endif %}
+
+{% endblock %}
 
 {% block meta %}
 
