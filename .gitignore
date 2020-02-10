@@ -15,3 +15,5 @@ pom.xml.asc
 
 **/.DS_Store
 cryogen.iml
+
+*.swp
