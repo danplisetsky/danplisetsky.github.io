@@ -4,7 +4,7 @@
  
 I'm Daniel Plisetsky, a software engineer and occasional writer. 
 
-Currently, I'm working on large-scale fleet management software at [General Motors][].
+Most recently, I've worked with [General Motors][] on large-scale fleet management software.
 
 I'm partial to functional programming, especially with Clojure.
 
