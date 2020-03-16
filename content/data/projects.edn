@@ -78,4 +78,13 @@
   :date        #inst "2019-07-21"
   :description "An npm library that comes with a command line tool and a user-facing API."}
 
+ {:name        "Cryogen"
+  :link        "https://github.com/danplisetsky/cryogen-core"
+  :subtitle    "A static site generator"
+  :stack       ["Clojure" "CircleCI"]
+  :own?        false
+  :date        #inst "2020-03-16"
+  :description "Added new functionality and fixed a bug in a Clojure-powered static site generator which is used
+  to generate this website"}
+
  ]

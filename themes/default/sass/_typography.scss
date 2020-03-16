@@ -116,6 +116,13 @@ main#pages {
       }
     }
   }
+
+  div#projects,
+  div#publications {
+    h3 {
+      text-decoration: underline;
+    }
+  }
 }
 
 main#archives {
