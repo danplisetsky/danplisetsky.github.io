@@ -102,6 +102,15 @@ main {
   h3 {
     font-family: variables.$bold-font-family;
   }
+
+  blockquote {
+    border-left-color: variables.$base-border-color;
+    border-left-style: solid;
+    border-left-width: 3px;
+    padding-left: 15px;
+
+    font-style: italic;
+  }
 }
 
 main#pages {
@@ -187,17 +196,6 @@ main#posts {
     span.title {
       @extend %song-or-book-title;
     }
-  }
-}
-
-main#secret {
-  blockquote {
-    border-left-color: variables.$base-border-color;
-    border-left-style: solid;
-    border-left-width: 3px;
-    padding-left: 15px;
-
-    font-style: italic;
   }
 }
 
