@@ -1,0 +1,10 @@
+{
+	"scripts": {
+		"lein:ring-headless": "lein ring server-headless",
+    "browsersync:server": "browser-sync start --no-open --server --serveStatic 'public' --files 'public/**/*'",
+    "browsersync:proxy": "browser-sync start --no-open --proxy 'localhost:3000' --files 'public/**/*'"
+	},
+	"devDependencies": {
+		"browser-sync": "^2.26.7"
+	}
+}
