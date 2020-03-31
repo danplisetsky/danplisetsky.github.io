@@ -17,3 +17,5 @@ pom.xml.asc
 cryogen.iml
 
 *.swp
+
+node_modules
