@@ -98,6 +98,10 @@ main {
   a:hover {
     border-bottom: 2px solid black;
   }
+
+  h3 {
+    font-family: variables.$bold-font-family;
+  }
 }
 
 main#pages {
@@ -116,19 +120,16 @@ main#pages {
       }
     }
   }
-
-  div#projects,
-  div#publications {
-    h3 {
-      text-decoration: underline;
-    }
-  }
 }
 
 main#archives {
   div#posts {
     section.post-summary {
       @extend %post-summary;
+
+      h3 {
+        font-family: variables.$default-font-family
+      }
     }
   }
 }

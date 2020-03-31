@@ -25,7 +25,16 @@ $strong-color: $dark-red;
   font-weight: 400;
 }
 
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("/css/vendors/fonts/montserrat-bold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+}
+
 $default-font-family: "Montserrat";
+$bold-font-family: "Montserrat-Bold";
 
 $default-font-size: 16px;
 $default-line-height: 1.5em;
