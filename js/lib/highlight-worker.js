@@ -1,0 +1,1 @@
+!function(){"use strict";self.importScripts("/js/lib/highlight.pack.js"),self.onmessage=function(s){s.data.forEach((s,t)=>{const e=self.hljs.highlightAuto(s.text,s.langs);self.postMessage({index:t,value:e.value})})}}();

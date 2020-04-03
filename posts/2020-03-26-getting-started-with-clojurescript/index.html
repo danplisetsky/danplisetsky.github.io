@@ -18,6 +18,13 @@
 
 
 
+<script src="/js/lib/highlight-bundle.js" type="text/javascript"></script>
+<link href="/css/highlight.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
   <meta property="og:site_name" content="Daniel Plisetsky">
   <meta property="og:image" content="https://danplisetsky.github.io/img/gjiam.jpeg">
   <meta property="og:url" content="https://danplisetsky.github.io/posts/2020-03-26-getting-started-with-clojurescript/">
@@ -32,12 +39,6 @@
   <link href="/css/blog.css" rel="stylesheet" type="text/css" />
   <link href="/css/vendors/font-awesome/fontawesome.min.css" rel="stylesheet" type="text/css" />
   <link href="/css/vendors/font-awesome/solid.min.css" rel="stylesheet" type="text/css" />
-
-  <link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/solarized-light.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/clojure.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/clojure-repl.min.js"></script>
 
   <title>Daniel Plisetsky: Getting Started with ClojureScript </title>
 </head>
@@ -369,7 +370,7 @@ clojure.lang.PersistentList
 (#object[clojure.core$_PLUS_ 0x74a72a9d "clojure.core$_PLUS_@74a72a9d"] 1 2)
 =&gt; (eval (list + 1 2))
 3
-</code></pre><p>What if we tried (1 2)?</p><pre><code class="clojure-repl">&gt; (1 2)
+</code></pre><p>What if we tried (1 2)?</p><pre><code class="clojure-repl">=&gt; (1 2)
 Execution error...
 class java.lang.Long cannot be cast to class clojure.lang.IFn
 </code></pre><p>So 1, which is <code>java.lang.Long</code>, does not implement <code>clojure.lang.IFn</code> – we cannot invoke 1. What this gives us, the fact that function invocation are lists themselves, is that we end programming in data structures themselves – for all intents and purposes, we program in Abstract Syntax Trees, which are inaccessible to us in many other languages. This gives us, users, the ability to extend the language which usually only the creators of a language have.</p><p>Let's look at two examples. We'll start with a simple one:</p><pre><code class="clojure-repl">shadow.user=&gt; (defmacro debug-plus-10 [expr]
@@ -395,7 +396,7 @@ debugging  (+ 1 2 10)
       ((IDisposable)font1).Dispose();
   }
 }
-</code></pre></blockquote><p>If there were no <code>using</code> in C#, you'd have to wait for the designers to put it in. In Clojure, we don't have to wait! Observe:</p><pre><code class="clojure">=&gt; (defmacro using [resource &amp; body]
+</code></pre></blockquote><p>If there were no <code>using</code> in C#, you'd have to wait for the designers to put it in. In Clojure, we don't have to wait! Observe:</p><pre><code class="clojure-repl">=&gt; (defmacro using [resource &amp; body]
   `(let [~(get resource 0) ~(get resource 1)]
      (try
       ~@body
@@ -462,8 +463,6 @@ nil
   <footer>
     <i class="fas fa-ellipsis-h"></i>
   </footer>
-
-  <script>hljs.initHighlightingOnLoad();</script>
 
 </body>
 
