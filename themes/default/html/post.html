@@ -14,6 +14,13 @@
 <meta property="og:title" content="{{ title }} | {{ post.title }}">
 <meta property="og:type" content="blog">
 
+{% if post.highlight-js %}
+
+{% script "js/lib/highlight-bundle.js" %}
+{% style "css/highlight.min.css" %}
+
+{% endif %}
+
 {% endblock %}
 
 {% block content %}

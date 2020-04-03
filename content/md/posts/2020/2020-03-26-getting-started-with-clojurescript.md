@@ -1,6 +1,7 @@
 {:title "Getting Started with ClojureScript"
  :layout :post
  :tags ["ClojureScript", "Clojure", "programming"]
+ :highlight-js true
  :music {:artist "Morrissey"
  	 :song "I Wish You Lonely"}
  :book {:author "Fyodor Dostoevsky"
@@ -548,7 +549,7 @@ The list we've created is [fully persistent][]; the implementation of `clojure.l
 What if we tried (1 2)?
 
 ```clojure-repl
-> (1 2)
+=> (1 2)
 Execution error...
 class java.lang.Long cannot be cast to class clojure.lang.IFn
 ```
@@ -607,7 +608,7 @@ using (var font1 = new Font("Arial", 10.0f))
 
 If there were no `using` in C#, you'd have to wait for the designers to put it in. In Clojure, we don't have to wait! Observe:
 
-```clojure
+```clojure-repl
 => (defmacro using [resource & body]
   `(let [~(get resource 0) ~(get resource 1)]
      (try
