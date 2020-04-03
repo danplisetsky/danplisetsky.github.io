@@ -554,7 +554,7 @@ Execution error...
 class java.lang.Long cannot be cast to class clojure.lang.IFn
 ```
 
-So 1, which is `java.lang.Long`, does not implement `clojure.lang.IFn` -- we cannot invoke 1. What this gives us, the fact that function invocation are lists themselves, is that we end programming in data structures themselves -- for all intents and purposes, we program in Abstract Syntax Trees, which are inaccessible to us in many other languages. This gives us, users, the ability to extend the language which usually only the creators of a language have.
+So 1, which is `java.lang.Long`, does not implement `clojure.lang.IFn` -- we cannot invoke 1. What this gives us, the fact that function invocations are lists themselves, is that we end programming in data structures themselves -- for all intents and purposes, we program in Abstract Syntax Trees, which are inaccessible to us in many other languages. This gives us, users, the ability to extend the language which usually only the creators of a language have.
 
 Let's look at two examples. We'll start with a simple one:
 
