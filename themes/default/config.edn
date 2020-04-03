@@ -1,2 +1,1 @@
-{:ignored-files [#"node_modules"]
- :sass-src      ["sass"]}
+{:sass-src      ["sass"]}
