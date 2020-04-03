@@ -565,7 +565,7 @@ shadow.user=> (defmacro debug-plus-10 [expr]
     new-expr))
 ```
 
-The ability to access the data structures is realized with macros. Here, we define one with `defmacro`. Clojure is an eagerly-evaluated language, but macros _don't_ evaluate their argument. Instead, they return the data structure that will then be evaluated.
+The ability to access the data structures is realized with macros. Here, we define one with `defmacro`. Clojure is an eagerly-evaluated language, but macros _don't_ evaluate their arguments. Instead, they return the data structure that will then be evaluated.
 
 In this case, `debug-plus-10` expects an expression `expr`. On the next line, we concat 10 to that expression. Then we print the expression out and return it. Only then will the expression be evaluated.
 
