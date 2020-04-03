@@ -8,3 +8,8 @@ css/*
 
 css/vendors/*
 !css/vendors/fonts
+
+!js/
+
+js/lib
+!js/js_src
