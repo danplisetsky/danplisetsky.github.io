@@ -8,6 +8,7 @@
                            [compojure "1.6.1"]
                            [ring-server "0.5.0"]
                            [cryogen-markdown "0.1.11" :exclusions [cryogen-core]]
+                           [org.clojure/tools.cli "1.0.194"]
                            [org.clojars.danplisetsky/cryogen-core "0.3.1-SNAPSHOT"]]
             :plugins [[lein-ring "0.12.5"]]
             :main cryogen.core
