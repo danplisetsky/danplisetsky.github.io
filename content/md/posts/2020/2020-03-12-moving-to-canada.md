@@ -9,11 +9,11 @@
              :2 "I'm sure that's not what it's actually called, but we'll use it to mean an IRCC office outside Canada"
              :3 "Verifying your degree, waiting for the next available IELTS exam, etc."}}
 
-After living in Russia for 21-and-a-half years and Israel for 5-and-a-half year,
+After living in Russia for 21-and-a-half years and Israel for 5-and-a-half years,
 I'm moving to Canada as a permanent resident. My application was approved in November of last year,
 and I was given until September of this year to land in Toronto (though I'm not waiting until September to do so).
 I won't get into the nitty-gritty of the whole process since it's already been faithfully covered
-by [Harry Schwartz][] (in English) and [Julia "Julik"][julik] (in Russian). I will, however, give a general
+by [Harry Schwartz][]. I will, however, give a general
 overview and cover some of the aspects unique to immigrating to Canada from Israel.
 
 ### How long did it take? 
@@ -64,5 +64,4 @@ As long as you follow the process laid out by the IRCC, everything should work o
 See you in Canada!
 
 [Harry Schwartz]: https://harryrschwartz.com/2019/11/16/canadian-permanent-residency 
-[julik]: https://julik.space/2016/09/14/step-by-step-to-canada/
 [official IRCC website]: https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada.html
