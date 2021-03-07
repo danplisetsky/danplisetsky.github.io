@@ -33,7 +33,7 @@ than it could have. Before we move on to them, here's the most important takeawa
 ### Read the official docs
 
 If you're interested in moving to Canada, take a few hours to read the [official IRCC website][]. It will give you
-all the information you'll need. If you really want a condensed version, go read Harry Schwartz or Julik (see links above).
+all the information you'll need. If you really want a condensed version, go read Harry Schwartz (see the link above).
 Keep in mind that those are anecdotal sources — use them to supplement the official information. By the way,
 what you're reading right now is also an anecdotal source.
 
