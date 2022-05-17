@@ -55,7 +55,7 @@ IRCC promises to process 80% of the applications in under 6 months.
 ### Final notes
 
 If the prospect of moving to Canada sounds exciting, you should start as soon as possible,
-as there will be several stages where you would be able to do nothing but wait<sup>3</sup>
+as there will be several stages where you would be able to do nothing but wait.<sup>3</sup>
 
 This should seem obvious, but _always_ provide honest answers.
 
