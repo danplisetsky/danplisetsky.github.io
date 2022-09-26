@@ -73,6 +73,18 @@ a {
   }
 }
 
+header {
+  h1 {
+    a {
+      background: linear-gradient(variables.$azure, 60%, variables.$yellow);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-background-clip: text;
+    }
+  }
+}
+
 nav {
   border-bottom-color: variables.$nav-border-color;
   border-bottom-style: solid;
